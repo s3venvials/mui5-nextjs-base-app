@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { Container, Typography, Button, Box } from "@mui/material";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import styles from "../styles/Home.module.css";
@@ -5,6 +6,8 @@ import styles from "../styles/Home.module.css";
 import Pricing from "../components/Pricing";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <Container className={styles.container}>
       <Container className={styles.main}>
@@ -33,6 +36,7 @@ export default function Home() {
             color="primary"
             startIcon={<PersonAddIcon />}
             size="large"
+            onClick={() => router.push('/signup')}
           >
             Sign Up
           </Button>
